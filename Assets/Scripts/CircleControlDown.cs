@@ -25,22 +25,22 @@ public class CircleControlDown : MonoBehaviour
 
         if (timer > 10)
         {
-            Debug.Log("Miss");
             miss.gameObject.SetActive(true);
-            //timer = 0;
             Destroy(canvasDelete, 0.5f);
         }
         if (timer > 8 & timer < 10 && Input.GetKey("down"))
         {
-            Debug.Log("Perfact");
             perfect.gameObject.SetActive(true);
             Destroy(canvasDelete, 0.5f);
+            Destroy(miss);
+            Destroy(good);
         }
         if (timer > 3 && timer < 8 && Input.GetKey("down"))
         {
-            Debug.Log("Good");
             good.gameObject.SetActive(true);
             Destroy(canvasDelete, 0.5f);
+            Destroy(miss);
+            Destroy(perfect);
         }
 
     }

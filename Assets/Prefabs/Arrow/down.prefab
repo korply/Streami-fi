@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7755221831318438861}
   - component: {fileID: 7755221831318438706}
-  - component: {fileID: 7755221831318438707}
   - component: {fileID: 7755221831318438704}
   - component: {fileID: 7210305902591125696}
   m_Layer: 5
@@ -61,29 +60,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &7755221831318438707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7755221831318438710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
 --- !u!114 &7755221831318438704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +239,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3055103460640370564, guid: 21eae5b21abd1fb40aa46e9630ce68b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 21eae5b21abd1fb40aa46e9630ce68b0, type: 3}
 --- !u!224 &8835439734710205026 stripped
 RectTransform:

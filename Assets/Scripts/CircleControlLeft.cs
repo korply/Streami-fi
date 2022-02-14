@@ -25,21 +25,22 @@ public class CircleControlLeft : MonoBehaviour
 
         if (timer > 10)
         {
-            Debug.Log("Miss");
             miss.gameObject.SetActive(true);
             Destroy(canvasDelete, 0.5f);
         }
         if (timer > 8 & timer < 10 && Input.GetKey("left"))
         {
-            Debug.Log("Perfact");
             perfect.gameObject.SetActive(true);
             Destroy(canvasDelete, 0.5f);
+            Destroy(miss);
+            Destroy(good);
         }
         if (timer > 3 && timer < 8 && Input.GetKey("left"))
         {
-            Debug.Log("Good");
             good.gameObject.SetActive(true);
             Destroy(canvasDelete, 0.5f);
+               Destroy(miss);
+            Destroy(perfect);
         }
 
     }

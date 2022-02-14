@@ -11,9 +11,6 @@ public class RandomPosition : MonoBehaviour
     public GameObject[] spawnArrow;
     //RectTransform ractPos;
 
-    public float xMin = -5, xMax = 5
-    , yMin = -500, yMax = 500;
-
     void Start()
     {
         //ractPos = gameObject.GetComponent<RectTransform>();

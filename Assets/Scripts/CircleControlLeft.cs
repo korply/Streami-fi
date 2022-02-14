@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CircleControlUp : MonoBehaviour
+public class CircleControlLeft : MonoBehaviour
 {
     public Image circle;
-
     public float timer = 0f;
     public float setTime;
-    // Start is called before the first frame update
     public GameObject miss;
     public GameObject perfect;
     public GameObject good;
@@ -29,16 +27,15 @@ public class CircleControlUp : MonoBehaviour
         {
             Debug.Log("Miss");
             miss.gameObject.SetActive(true);
-            //timer = 0;
             Destroy(canvasDelete, 0.5f);
         }
-        if (timer > 8 & timer < 10 && Input.GetKey("up"))
+        if (timer > 8 & timer < 10 && Input.GetKey("left"))
         {
             Debug.Log("Perfact");
             perfect.gameObject.SetActive(true);
             Destroy(canvasDelete, 0.5f);
         }
-        if (timer > 3 && timer < 8 && Input.GetKey("up"))
+        if (timer > 3 && timer < 8 && Input.GetKey("left"))
         {
             Debug.Log("Good");
             good.gameObject.SetActive(true);

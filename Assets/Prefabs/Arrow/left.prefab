@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7755221831318438706}
   - component: {fileID: 7755221831318438707}
   - component: {fileID: 7755221831318438704}
-  - component: {fileID: 275893894154465945}
+  - component: {fileID: 3582867724353993104}
   m_Layer: 5
-  m_Name: up
+  m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &7755221831318438704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &275893894154465945
+--- !u!114 &3582867724353993104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7755221831318438710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ac86369867f38a49a7f1c100272f30f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e108d1be8dc1a54fb9880f9ee92e41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   circle: {fileID: 2359534767024311986}
@@ -234,6 +234,18 @@ PrefabInstance:
     - target: {fileID: 1727451114259336643, guid: 21eae5b21abd1fb40aa46e9630ce68b0, type: 3}
       propertyPath: m_LocalScale.z
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727451114259336643, guid: 21eae5b21abd1fb40aa46e9630ce68b0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727451114259336643, guid: 21eae5b21abd1fb40aa46e9630ce68b0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727451114259336643, guid: 21eae5b21abd1fb40aa46e9630ce68b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 6730582198913039318, guid: 21eae5b21abd1fb40aa46e9630ce68b0, type: 3}
       propertyPath: m_Name

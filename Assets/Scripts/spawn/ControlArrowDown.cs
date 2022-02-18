@@ -36,7 +36,7 @@ public class ControlArrowDown : MonoBehaviour
             Destroy(miss);
             Destroy(good);
         }
-        if (timer > 0.5f && timer < 0.8f && Input.GetKey("down"))
+        if (timer > 0.1f && timer < 0.99f && Input.GetKey("down"))
         {
             good.gameObject.SetActive(true);
             Destroy(miss);

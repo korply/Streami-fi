@@ -29,14 +29,14 @@ public class ControlArrowTop : MonoBehaviour
             Destroy(gameObject, 0.2f);
             miss.gameObject.SetActive(true);
         }
-        if (timer > 1f && timer < 1.2 && Input.GetKeyDown("up"))
+        if (timer > 1f && timer < 1.2  && Input.GetKeyDown("up"))
         {
             perfact.gameObject.SetActive(true);
             Destroy(miss);
             Destroy(good);
             Destroy(gameObject, 0.2f);
         }
-        if (timer > 0.5f && timer < 0.8f && Input.GetKeyDown("up"))
+        if (timer > 0.1f && timer < 0.99f && Input.GetKeyDown("up"))
         {
             good.gameObject.SetActive(true);
             Destroy(miss);

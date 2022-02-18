@@ -36,7 +36,7 @@ public class ControlArrowRight : MonoBehaviour
             Destroy(good);
             Destroy(gameObject, 0.2f);
         }
-        if (timer > 0.5f && timer < 0.8f && Input.GetKeyDown("right"))
+        if (timer > 0.1f && timer < 0.99f && Input.GetKeyDown("right"))
         {
             good.gameObject.SetActive(true);
             Destroy(miss);

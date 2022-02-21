@@ -31,7 +31,7 @@ public class ControlArrowTop : MonoBehaviour
             Score.instance.NoteMissed();
             Destroy(gameObject, 0.2f);
         }
-        if (timer > 1f && timer < 1.2 && Input.GetKeyDown("up"))
+        if (timer > 1f && timer < 1.2  && Input.GetKeyDown("up"))
         {
             perfact.gameObject.SetActive(true);
             Score.instance.NoteHitPerfact();

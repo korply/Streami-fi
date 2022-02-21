@@ -25,12 +25,14 @@ public class ControlArrowTop : MonoBehaviour
         {
             miss.gameObject.SetActive(true);
             CurrentScore.instance.Miss(0);
+                Song.song.Miss();
             Destroy(gameObject, 0.2f);
         }
         if (timer > 1f && timer < 1.2 && Input.GetKeyDown("up"))
         {
             perfact.gameObject.SetActive(true);
             CurrentScore.instance.Score(100, 1);
+                Song.song.Good();
             Destroy(miss);
             Destroy(good);
             Destroy(gameObject, 0.2f);
@@ -39,6 +41,7 @@ public class ControlArrowTop : MonoBehaviour
         {
             good.gameObject.SetActive(true);
             CurrentScore.instance.Score(50, 1);
+                Song.song.Bad();
             Destroy(miss);
             Destroy(perfact);
             Destroy(gameObject, 0.2f);

@@ -48,6 +48,7 @@ public class Spawn : MonoBehaviour
     }
     void SpawnTop()
     {
+        
         Vector2 posTop = new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(1.3f, 1.4f));
         Instantiate(Top, posTop, Quaternion.identity);
     }

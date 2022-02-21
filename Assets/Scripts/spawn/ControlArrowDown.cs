@@ -24,23 +24,28 @@ public class ControlArrowDown : MonoBehaviour
         timer += Time.deltaTime;
         circle.size = new Vector2(1.5f - (timer), 1.5f - (timer));
         
-        if (timer > 1.2)
+        if (timer > 1.3)
         {
             timer = 0;
-            Destroy(gameObject, 0.5f);
             miss.gameObject.SetActive(true);
+            Score.instance.NoteMissed();
+            Destroy(gameObject, 0.2f);
         }
         if (timer > 1f && timer < 1.2 && Input.GetKey("down"))
         {
             perfact.gameObject.SetActive(true);
+            Score.instance.NoteHitPerfact();
             Destroy(miss);
             Destroy(good);
+            Destroy(gameObject, 0.2f);
         }
-        if (timer > 0.5f && timer < 0.8f && Input.GetKey("down"))
+        if (timer > 0.1f && timer < 0.99f && Input.GetKey("down"))
         {
             good.gameObject.SetActive(true);
+            Score.instance.NoteHitGood();
             Destroy(miss);
             Destroy(perfact);
+            Destroy(gameObject, 0.2f);
         }
 
     }

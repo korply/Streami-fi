@@ -5,8 +5,15 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    private int currentScore;
-    public Text text;
+    public static Score instance;
+    private int Perfactscore = 100;
+    private int Goodscore = 50;
+    public int currentScore;
+    public int currentMultiplier;
+    public int multiplierTracker;
+    public int[] multplierThresholds;
+    public Text scoreText;
+    public Text multiText;
     GameObject top;
     GameObject down;
     GameObject left;
@@ -19,7 +26,9 @@ public class Score : MonoBehaviour
 
     void Start()
     {
-        currentScore = 0;
+        instance = this;
+        scoreText.text = "Score: 0";
+        currentMultiplier = 1;
     }
 
     void Update()
@@ -33,38 +42,97 @@ public class Score : MonoBehaviour
         leftG = GameObject.Find("Left(Clone)/Good");
         rightG = GameObject.Find("Right(Clone)/Good");
 
-        if (top == true)
+        // if (Input.anyKeyDown)
+        // {
+        //     if (top == true)
+        //     {
+        //         Perfactscore;
+        //         currentMultiplier++;
+        //     }
+        //     else if (down == true)
+        //     {
+        //         Perfactscore;
+        //         currentMultiplier++;
+        //     }
+        //     else if (left == true)
+        //     {
+        //         Perfactscore;
+        //         currentMultiplier++;
+        //     }
+        //     else if (right == true)
+        //     {
+        //         Perfactscore;
+        //         currentMultiplier++;
+        //     }
+        //     else if (topG == true)
+        //     {
+        //         Goodscore;
+        //         currentMultiplier++;
+        //     }
+        //     else if (downG == true)
+        //     {
+        //         Goodscore;
+        //         currentMultiplier++;
+        //     }
+        //     else if (leftG == true)
+        //     {
+        //         Goodscore;
+        //         currentMultiplier++;
+        //     }
+        //     else if (rightG == true)
+        //     {
+        //         Goodscore;
+        //         currentMultiplier++;
+        //     }
+        //     else
+        //     {
+        //         currentMultiplier = 0;
+        //     }
+        //     scoreText.text = currentScore.ToString();
+        //     multiText.text = currentMultiplier.ToString();
+        // }
+    }
+    public void NoteHitPerfact()
+    {
+        if(currentMultiplier - 1 < multplierThresholds.Length)
         {
-            currentScore += 10;
+            multiplierTracker++;
+
+            if (multplierThresholds[currentMultiplier - 1] <= multiplierTracker)
+            {
+                multiplierTracker = 0;
+                currentMultiplier++;
+            }
         }
-        if (down == true)
+        multiText.text = "X" + currentMultiplier;
+
+        currentScore += Perfactscore * currentMultiplier;
+        scoreText.text = " " + currentScore;
+
+    }
+    public void NoteHitGood()
+    {
+        if(currentMultiplier - 1 < multplierThresholds.Length)
         {
-            currentScore += 10;
+            multiplierTracker++;
+
+            if (multplierThresholds[currentMultiplier - 1] <= multiplierTracker)
+            {
+                multiplierTracker = 0;
+                currentMultiplier++;
+            }
         }
-        if (left == true)
-        {
-            currentScore += 10;
-        }
-        if (right == true)
-        {
-            currentScore += 10;
-        }
-        if (topG == true)
-        {
-            currentScore += 3;
-        }
-        if (downG == true)
-        {
-            currentScore += 3;
-        }
-        if (leftG == true)
-        {
-            currentScore += 3;
-        }
-        if (rightG == true)
-        {
-            currentScore += 3;
-        }
-        text.text = currentScore.ToString();
+        multiText.text = "X" + currentMultiplier;
+
+        currentScore += Goodscore * currentMultiplier;
+        scoreText.text = " " + currentScore;
+
+    }
+    public void NoteMissed()
+    {
+        currentMultiplier = 1;
+        multiplierTracker = 0;
+
+        multiText.text = "X1" + currentMultiplier;
     }
 }

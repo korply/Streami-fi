@@ -26,19 +26,22 @@ public class ControlArrowLeft : MonoBehaviour
 
         if (timer > 1.3)
         {
-            Destroy(gameObject, 0.2f);
             miss.gameObject.SetActive(true);
+            Score.instance.NoteMissed();
+            Destroy(gameObject, 0.2f);
         }
         if (timer > 1f && timer < 1.2 && Input.GetKeyDown("left"))
         {
             perfact.gameObject.SetActive(true);
+            Score.instance.NoteHitPerfact();
             Destroy(miss);
             Destroy(good);
             Destroy(gameObject, 0.2f);
         }
-        if (timer > 0.5f && timer < 0.8f && Input.GetKeyDown("left"))
+        if (timer > 0.1f && timer < 0.99f && Input.GetKeyDown("left"))
         {
             good.gameObject.SetActive(true);
+            Score.instance.NoteHitGood();
             Destroy(miss);
             Destroy(perfact);
             Destroy(gameObject, 0.2f);

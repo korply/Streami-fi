@@ -24,6 +24,7 @@ public class Spawn : MonoBehaviour
         theCountDown -= Time.deltaTime;
         theCountLeft -= Time.deltaTime;
         theCountRight -= Time.deltaTime;
+        
         if (theCountTop <= 0)
         {
             SpawnTop();
@@ -47,26 +48,29 @@ public class Spawn : MonoBehaviour
 
     }
     void SpawnTop()
-    {
-        
-        Vector2 posTop = new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(1.3f, 1.4f));
-        Instantiate(Top, posTop, Quaternion.identity);
-    }
+    {  
+        Vector2 posTop = new Vector2(Random.Range(900, 1100),900);
+        var topSpawn =   Instantiate(Top, posTop, Quaternion.identity);
+         topSpawn.transform.parent = gameObject.transform;
 
+    }
     void SpawnLeft()
     {
-        Vector2 posLeft = new Vector2(Random.Range(-0.3f, -0.4f), Random.Range(0.5f, 1f));
-        Instantiate(Left, posLeft, Quaternion.identity);
+        Vector2 posLeft = new Vector2(600, Random.Range(500, 600));
+         var leftSpawn = Instantiate(Left, posLeft, Quaternion.identity);
+         leftSpawn.transform.parent = gameObject.transform;
     }
     void SpawnRight()
     {
-        Vector2 posRight = new Vector2(Random.Range(0.35f, 0.45f), Random.Range(0.5f, 1f));
-        Instantiate(Right, posRight, Quaternion.identity);
+        Vector2 posRight = new Vector2(1300, Random.Range(500, 600));
+        var rightSpawn =  Instantiate(Right, posRight, Quaternion.identity);
+          rightSpawn.transform.parent = gameObject.transform;
     }
     void SpawnDown()
     {
-        Vector2 posDown = new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(0.25f, 0.4f));
-        Instantiate(Down, posDown, Quaternion.identity);
+        Vector2 posDown = new Vector2(Random.Range(900, 1100), 300);
+        var downSpawn =   Instantiate(Down, posDown, Quaternion.identity);
+          downSpawn.transform.parent = gameObject.transform;
     }
 
 }

@@ -5,47 +5,54 @@ using UnityEngine.UI;
 
 public class ControlArrowRight : MonoBehaviour
 {
-    public SpriteRenderer circle;
-    public SpriteRenderer miss;
-    public SpriteRenderer perfact;
-    public SpriteRenderer good;
-    Score sCore;
-
-
-    int score;
+    public Image circle;
+    public Image miss;
+    public Image good;
+    public Image bad;
 
     float timer = 0f;
+    float firstSize;
     void Start()
     {
-        circle.drawMode = SpriteDrawMode.Sliced;
+        circle.GetComponent<Image>();
+        firstSize = circle.rectTransform.rect.width;
     }
 
-    void Update()
+    public void Update()
     {
         timer += Time.deltaTime;
-        circle.size = new Vector2(1.5f - (timer), 1.5f - (timer));
+        circle.rectTransform.sizeDelta = new Vector2(circle.rectTransform.rect.width - (timer), circle.rectTransform.rect.height - (timer));
 
-        if (timer > 1.3)
+        DestroyObject();
+    }
+
+    void DestroyObject()
+    {
+        if (circle.rectTransform.rect.width < firstSize && circle.rectTransform.rect.width > firstSize / 2 && Input.GetKeyDown("right"))
         {
-            miss.gameObject.SetActive(true);
-            Score.instance.NoteMissed();
-            Destroy(gameObject, 0.2f);
-        }
-        if (timer > 1f && timer < 1.2 && Input.GetKeyDown("right"))
-        {
-            perfact.gameObject.SetActive(true);
-            Score.instance.NoteHitPerfact();
-            Destroy(miss);
+            bad.gameObject.SetActive(true);
+            CurrentScore.instance.Score(50, 1);
+            Song.song.Bad();
             Destroy(good);
-            Destroy(gameObject, 0.2f);
+            Destroy(miss);
+            Destroy(gameObject, 0.3f);
         }
-        if (timer > 0.1f && timer < 0.99f && Input.GetKeyDown("right"))
+        else if (circle.rectTransform.rect.width < firstSize / 2 && circle.rectTransform.rect.width > firstSize / 3 && Input.GetKeyDown("right"))
         {
             good.gameObject.SetActive(true);
-            Score.instance.NoteHitGood();
+            CurrentScore.instance.Score(100, 1);
+            Song.song.Good();
+            Destroy(bad);
             Destroy(miss);
-            Destroy(perfact);
-            Destroy(gameObject, 0.2f);
+            Destroy(gameObject, 0.3f);
+        }
+
+        else if (circle.rectTransform.rect.width < firstSize / 3)
+        {
+            miss.gameObject.SetActive(true);
+            CurrentScore.instance.Miss(0);
+            Song.song.Miss();
+            Destroy(gameObject, 0.3f);
         }
 
     }

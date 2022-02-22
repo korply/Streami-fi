@@ -49,23 +49,23 @@ public class Spawn : MonoBehaviour
     void SpawnTop()
     {
         
-        Vector2 posTop = new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(1.3f, 1.4f));
+        Vector2 posTop = new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(1.3f, 1.3f));
         Instantiate(Top, posTop, Quaternion.identity);
     }
 
     void SpawnLeft()
     {
-        Vector2 posLeft = new Vector2(Random.Range(-0.3f, -0.4f), Random.Range(0.5f, 1f));
+        Vector2 posLeft = new Vector2(Random.Range(-0.3f, -0.3f), Random.Range(0.5f, 1f));
         Instantiate(Left, posLeft, Quaternion.identity);
     }
     void SpawnRight()
     {
-        Vector2 posRight = new Vector2(Random.Range(0.35f, 0.45f), Random.Range(0.5f, 1f));
+        Vector2 posRight = new Vector2(Random.Range(0.3f, 0.3f), Random.Range(0.5f, 1f));
         Instantiate(Right, posRight, Quaternion.identity);
     }
     void SpawnDown()
     {
-        Vector2 posDown = new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(0.25f, 0.4f));
+        Vector2 posDown = new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(0.4f, 0.4f));
         Instantiate(Down, posDown, Quaternion.identity);
     }
 

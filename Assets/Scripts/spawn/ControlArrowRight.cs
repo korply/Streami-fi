@@ -9,6 +9,10 @@ public class ControlArrowRight : MonoBehaviour
     public SpriteRenderer miss;
     public SpriteRenderer perfact;
     public SpriteRenderer good;
+    Score sCore;
+
+
+    int score;
 
     float timer = 0f;
     void Start()
@@ -24,15 +28,13 @@ public class ControlArrowRight : MonoBehaviour
         if (timer > 1.3)
         {
             miss.gameObject.SetActive(true);
-            CurrentScore.instance.Miss(0);
-            Song.song.Miss();
+            Score.instance.NoteMissed();
             Destroy(gameObject, 0.2f);
         }
         if (timer > 1f && timer < 1.2 && Input.GetKeyDown("right"))
         {
             perfact.gameObject.SetActive(true);
-            CurrentScore.instance.Score(100, 1);
-            Song.song.Good();
+            Score.instance.NoteHitPerfact();
             Destroy(miss);
             Destroy(good);
             Destroy(gameObject, 0.2f);
@@ -40,8 +42,7 @@ public class ControlArrowRight : MonoBehaviour
         if (timer > 0.1f && timer < 0.99f && Input.GetKeyDown("right"))
         {
             good.gameObject.SetActive(true);
-            CurrentScore.instance.Score(50, 1);
-            Song.song.Bad();
+            Score.instance.NoteHitGood();
             Destroy(miss);
             Destroy(perfact);
             Destroy(gameObject, 0.2f);

@@ -11,7 +11,6 @@ public class CurrentScore : MonoBehaviour
     public Text text;
     public Text textCombo;
     public int currentScore;
-    int combo;
     int comboPoint;
 
     float timer = 0;
@@ -23,9 +22,9 @@ public class CurrentScore : MonoBehaviour
     public void Score(int score, int combo)
     {
         currentScore += score;
-        text.text = currentScore.ToString();
-
         comboPoint += combo;
+        
+        text.text = currentScore.ToString();
         textCombo.text = comboPoint.ToString();
     }
 

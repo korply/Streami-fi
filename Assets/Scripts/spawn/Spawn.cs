@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class Spawn : MonoBehaviour
 {
-    float NextSpawnT = 1.5f;
+    float NextSpawnT = 2.5f;
     float NextSpawnD = 4f;
     float NextSpawnL = 3.5f;
     float NextSpawnR = 2f;
-    float theCountTop = 4;
-    float theCountDown = 3;
-    float theCountLeft = 2;
-    float theCountRight = 1;
+    float theCountTop = 9;
+    float theCountDown = 8;
+    float theCountLeft = 7;
+    float theCountRight = 6;
     public GameObject Top;
     public GameObject Down;
     public GameObject Left;

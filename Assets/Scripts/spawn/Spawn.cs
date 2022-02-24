@@ -7,8 +7,8 @@ public class Spawn : MonoBehaviour
 {
     float NextSpawnT = 2.5f;
     float NextSpawnD = 4f;
-    float NextSpawnL = 3.5f;
-    float NextSpawnR = 2f;
+    float NextSpawnL = 3f;
+    float NextSpawnR = 3.5f;
     float theCountTop = 9;
     float theCountDown = 8;
     float theCountLeft = 7;

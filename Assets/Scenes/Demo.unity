@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 0.9292453, b: 0.9292453, a: 1}
+  m_AmbientSkyColor: {r: 0.8773585, g: 0.7490655, b: 0.7490655, a: 1}
   m_AmbientEquatorColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
   m_AmbientGroundColor: {r: 0.9811321, g: 0.013883919, b: 0.8579864, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 1
-  m_SubtractiveShadowColor: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -165,9 +165,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.42745098, g: 0.67549187, b: 0.83137256, a: 1}
+  m_Color: {r: 0.504717, g: 0.80765706, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 20
+  m_Range: 5
   m_SpotAngle: 39.7
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1485,6 +1485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MIFI-A (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 591336de9c706e14482514a139f872cd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 591336de9c706e14482514a139f872cd, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1588,7 +1592,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1696,7 +1700,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1990,9 +1994,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.42745098, g: 0.83137256, b: 0.4898457, a: 1}
+  m_Color: {r: 0.5235849, g: 1, b: 0.5975911, a: 1}
   m_Intensity: 1
-  m_Range: 20
+  m_Range: 5
   m_SpotAngle: 39.7
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -2212,6 +2216,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MIFI-A (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 591336de9c706e14482514a139f872cd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 591336de9c706e14482514a139f872cd, type: 3}
       propertyPath: m_Controller
       value: 
@@ -2292,9 +2300,9 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.78476465, g: 0.4268423, b: 0.8301887, a: 1}
+  m_Color: {r: 0.9335044, g: 0.4292453, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 20
+  m_Range: 100
   m_SpotAngle: 39.7
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

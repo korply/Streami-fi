@@ -31,7 +31,7 @@ public class ControlArrowLeft : MonoBehaviour
         if (circle.rectTransform.rect.width < firstSize && circle.rectTransform.rect.width > firstSize / 2 && Input.GetKeyDown("left"))
         {
             bad.gameObject.SetActive(true);
-            CurrentScore.instance.Score(50, 1);
+            CurrentScore.instance.OnhitBad();
             Song.song.Bad();
             Destroy(good);
             Destroy(miss);
@@ -40,7 +40,7 @@ public class ControlArrowLeft : MonoBehaviour
         else if (circle.rectTransform.rect.width < firstSize / 2 && circle.rectTransform.rect.width > firstSize / 3 && Input.GetKeyDown("left"))
         {
             good.gameObject.SetActive(true);
-            CurrentScore.instance.Score(100, 1);
+            CurrentScore.instance.OnhitGood();
             Song.song.Good();
             Destroy(bad);
             Destroy(miss);
@@ -50,7 +50,7 @@ public class ControlArrowLeft : MonoBehaviour
         else if (circle.rectTransform.rect.width < firstSize / 3)
         {
             miss.gameObject.SetActive(true);
-            CurrentScore.instance.Miss(0);
+            CurrentScore.instance.OnhitMiss();
             Song.song.Miss();
             Destroy(gameObject, 0.3f);
         }

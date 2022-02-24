@@ -385,7 +385,6 @@ GameObject:
   - component: {fileID: 247150579}
   - component: {fileID: 247150582}
   - component: {fileID: 247150581}
-  - component: {fileID: 247150580}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -412,18 +411,6 @@ RectTransform:
   m_AnchoredPosition: {x: -12.305, y: -6.7299805}
   m_SizeDelta: {x: 263.46, y: 56.998}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &247150580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247150578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a86fc614993e8e4995fdf967efff239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &247150581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,7 +444,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 'Score: 100'
 --- !u!222 &247150582
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -601,9 +588,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf8974e104d05044bf919eb2967e5e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 247150581}
-  textCombo: {fileID: 324270691}
   currentScore: 0
+  Goodscore: 100
+  Badscore: 50
+  currentMultiplier: 1
+  multiplierTracker: 0
+  multiplierThresholds: 020000000400000008000000
+  scoreText: {fileID: 247150581}
+  textCombo: {fileID: 324270691}
 --- !u!82 &288544067
 AudioSource:
   m_ObjectHideFlags: 0
@@ -786,7 +778,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: 
 --- !u!222 &324270692
 CanvasRenderer:
   m_ObjectHideFlags: 0

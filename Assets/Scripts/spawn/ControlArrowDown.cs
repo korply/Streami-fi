@@ -29,10 +29,36 @@ public class ControlArrowDown : MonoBehaviour
 
     void DestroyObject()
     {
-        if (circle.rectTransform.rect.width < firstSize && circle.rectTransform.rect.width > firstSize / 2 && Input.GetKeyDown("down"))
+        // if (circle.rectTransform.rect.width < firstSize && circle.rectTransform.rect.width > firstSize / 2 && Input.GetKeyDown("down"))
+        // {
+        //     bad.gameObject.SetActive(true);
+        //     CurrentScore.instance.Score(50, 1);
+        //     Song.song.Bad();
+        //     Destroy(good);
+        //     Destroy(miss);
+        //     Destroy(gameObject, 0.3f);
+        // }
+        // else if (circle.rectTransform.rect.width < firstSize / 2 && circle.rectTransform.rect.width > firstSize / 3 && Input.GetKeyDown("down"))
+        // {
+        //     good.gameObject.SetActive(true);
+        //     CurrentScore.instance.Score(100, 1);
+        //     Song.song.Good();
+        //     Destroy(bad);
+        //     Destroy(miss);
+        //     Destroy(gameObject, 0.3f);
+        // }
+
+        // else if (circle.rectTransform.rect.width < firstSize / 3)
+        // {
+        //     miss.gameObject.SetActive(true);
+        //     CurrentScore.instance.Miss(0);
+        //     Song.song.Miss();
+        //     Destroy(gameObject, 0.3f);
+        // }
+         if (circle.rectTransform.rect.width < firstSize && circle.rectTransform.rect.width > firstSize / 2 && Input.GetKeyDown("down"))
         {
             bad.gameObject.SetActive(true);
-            CurrentScore.instance.Score(50, 1);
+            CurrentScore.instance.OnhitBad();
             Song.song.Bad();
             Destroy(good);
             Destroy(miss);
@@ -41,7 +67,7 @@ public class ControlArrowDown : MonoBehaviour
         else if (circle.rectTransform.rect.width < firstSize / 2 && circle.rectTransform.rect.width > firstSize / 3 && Input.GetKeyDown("down"))
         {
             good.gameObject.SetActive(true);
-            CurrentScore.instance.Score(100, 1);
+            CurrentScore.instance.OnhitGood();
             Song.song.Good();
             Destroy(bad);
             Destroy(miss);
@@ -51,7 +77,7 @@ public class ControlArrowDown : MonoBehaviour
         else if (circle.rectTransform.rect.width < firstSize / 3)
         {
             miss.gameObject.SetActive(true);
-            CurrentScore.instance.Miss(0);
+            CurrentScore.instance.OnhitMiss();
             Song.song.Miss();
             Destroy(gameObject, 0.3f);
         }
